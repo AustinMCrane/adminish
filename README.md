@@ -14,6 +14,7 @@ rails generate controller admin
 ```
 - added a function to handle the rendering
 ```
+# app/controllers/admin_controller.rb
   def models
   # the array is an array of activerecord classes you want to have managed for you
     render json: Adminish::Admin.new([Post, Category])
