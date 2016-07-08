@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Adminish</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" >
+    <style media="screen">
+      html,
+      body {
+        background-color: #F3F5F6;
+      }
+      .eye {
+        border-radius: 50%;
+        background-color: white;
+        height: 150px;
+        width: 150px;
+      }
+      .pupal {
+        background-color: black;
+        border-radius: 50%;
+        margin: 50px 50px;
+        height: 40px;
+        width: 40px;
+      }
+      #face {
+        background: #FFE0BD;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      #left-eye {
+        float: left;
+      }
+      #right-eye {
+        float: right;
+      }
+      #hero {
+        text-align: center;
+        vertical-align: middle;
+        line-height: 90px;       /* the same as your div height */
+      }
+      #title {
+        background-color: #D4C7AE;
+      }
+      #description {
+        background-color: #5D6A51;
+      }
+      .center-image .img-responsive {
+          margin: 0 auto;
+      }
+      #mustache {
+      }
+
+      #code-usage {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="face col-md-4 col-md-offset-4">
+        </div>
+      </div>
+      <div id="title"  class="row">
+        <div id="hero" class="col-md-4 col-md-offset-4">
+          <h1>Adminish</h1>
+          <div id="face">
+            <div id="left-eye" class="eye">
+              <div class="pupal">
+
+              </div>
+            </div>
+            <div id="right-eye" class="eye">
+              <div class="pupal">
+
+              </div>
+            </div>
+
+            <img  class="center-image img-responsive" id="mustache" src="https://pixabay.com/static/uploads/photo/2016/02/28/21/19/mustache-1227605_960_720.png" alt="" />
+          </div>
+          <p>
+            A delightful way to describe your REST API
+          </p>
+        </div>
+      </div>
+      <div id="description" class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="col-md-6">
+            <h4>Example Usage</h4>
+            <div id="code-usage">
+              <pre>
+                <code class="text-left">
+                  # app/controllers/admin_controller.rb
+
+                    def models
+                    # the array is an array of activerecord classes you want to have managed for you
+                      render json: Adminish::Admin.new([Post, Category])
+                    end
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4>Example Output</h4>
+            <pre>
+              <code class="text-left">
+              {
+                "models": [{
+                  "title": "Post",
+                  "tag": "posts",
+                  "crud": {
+                    "index": "/posts/",
+                    "show": "/posts/:id",
+                    "create": "/posts/",
+                    "update": "/posts/:id",
+                    "delete": "/posts/:id"
+                  },
+                  "attributes": [{
+                    "tag": "id",
+                    "title": "id",
+                    "type": "integer"
+                  }, {
+                    "tag": "title",
+                    "title": "title",
+                    "type": "string"
+                  }, {
+                    "tag": "body",
+                    "title": "body",
+                    "type": "text"
+                  }, {
+                    "tag": "created_at",
+                    "title": "created at",
+                    "type": "datetime"
+                  }, {
+                    "tag": "updated_at",
+                    "title": "updated at",
+                    "type": "datetime"
+                  }]
+                }, {
+                  "title": "Category",
+                  "tag": "categories",
+                  "crud": {
+                    "index": "/categories/",
+                    "show": "/categories/:id",
+                    "create": "/categories/",
+                    "update": "/categories/:id",
+                    "delete": "/categories/:id"
+                  },
+                  "attributes": [{
+                    "tag": "id",
+                    "title": "id",
+                    "type": "integer"
+                  }, {
+                    "tag": "title",
+                    "title": "title",
+                    "type": "string"
+                  }, {
+                    "tag": "created_at",
+                    "title": "created at",
+                    "type": "datetime"
+                  }, {
+                    "tag": "updated_at",
+                    "title": "updated at",
+                    "type": "datetime"
+                  }]
+                }]
+              }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    var left_eye_pupil = $('#left-eye');
+    var right_eye_pupil = $('#right-eye');
+    while (true) {
+
+    }
+    </script>
+  </body>
+</html>
